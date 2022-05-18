@@ -4,7 +4,7 @@
 # Installs the mesh commander software on a FreeBSD machine (presumably running pfSense).
 
 # The rc script associated with this branch or fork:
-#RC_SCRIPT_URL="https://raw.githubusercontent.com/matstatman/meshcommander-pfsense/master/rc.d/meshcommander.sh"
+RC_SCRIPT_URL="https://raw.githubusercontent.com/matstatman/meshcommander-pfsense/master/rc.d/meshcommander.sh"
 
 # If pkg-ng is not yet installed, bootstrap it:
 if ! /usr/sbin/pkg -N 2> /dev/null; then
@@ -33,6 +33,7 @@ FREEBSD_PACKAGE_LIST_URL="https://pkg.freebsd.org/${ABI}/latest/packagesite.txz"
 if [ -f /usr/local/etc/rc.d/meshcommander.sh ]; then
   echo -n "Stopping the meshcommander service..."
   /usr/sbin/service meshcommander.sh stop
+  rm -rf /usr/local/meshcommander
   echo " done."
 fi
 
@@ -75,8 +76,6 @@ mkdir -p /usr/local/meshcommander
 cd /usr/local/meshcommander/
 npm install meshcommander
 echo " done."
-
-cd /usr/local/meshcommander && node node_modules/meshcommander --any
 
 # Fetch the rc script from github:
 echo -n "Installing rc script..."
