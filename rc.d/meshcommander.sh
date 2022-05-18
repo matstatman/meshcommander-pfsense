@@ -20,7 +20,7 @@ meshcommander_start()
   if checkyesno ${rcvar}; then
     echo "Starting meshcommander. "
     cd /usr/local/meshcommander
-    node node_modules/meshcommander --any &
+    /usr/local/bin/node node_modules/meshcommander --any &
     echo $! > $pidfile
 
   fi
