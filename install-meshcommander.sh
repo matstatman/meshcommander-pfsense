@@ -54,7 +54,8 @@ AddPkg () {
 	     echo "Package $pkgname-$pkgvers already installed."
 	else
 	     env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg add -f ${FREEBSD_PACKAGE_URL}${pkgname}-${pkgvers}.pkg
-       pkg lock -yq $pkgname
+	fi
+        pkg lock -yq $pkgname
 }
 
 #Add the following Packages for installation or reinstallation (if something was removed)
