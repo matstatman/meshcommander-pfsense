@@ -97,5 +97,5 @@ fi
 
 # Start it up:
 echo -n "Starting the meshcommander service..."
-echo /usr/sbin/service meshcommander.sh start
+/usr/sbin/service meshcommander.sh start
 echo " done."
