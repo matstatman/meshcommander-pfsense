@@ -63,8 +63,8 @@ AddPkg gmake
 AddPkg brotli
 AddPkg c-ares
 AddPkg icu
-AddPkg node14
-AddPkg npm-node14
+AddPkg node20
+AddPkg npm-node20
 
 # Clean up downloaded package manifest:
 rm packagesite.*
